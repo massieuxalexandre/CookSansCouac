@@ -1,6 +1,6 @@
 ## Setup : 
 
-# Aller dans terminal à la racine du projet (terminal vscode par exemple) puis taper : 
+#### Aller dans terminal à la racine du projet (terminal vscode par exemple) puis taper : 
 ```bash
 cd backend
 python -m venv venv
