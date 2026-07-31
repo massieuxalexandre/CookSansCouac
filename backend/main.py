@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from typing import List
-from models import Recipe, IngredientRecipe
+from models import Recipe, Ingredient, IngredientRecipe
 
 app = FastAPI()
 app.add_middleware(
@@ -27,7 +27,28 @@ recipes_db = [
             "Faire fondre le chocolat et le beurre.",
             "Battre les oeufs et le sucre."
         ]
+    ),
+    Recipe(
+        id=2,
+        title="Salade de fruits",
+        ingredients=[
+            IngredientRecipe(name="pomme", type="solide", quantity=1),
+            IngredientRecipe(name="banane", type="solide", quantity=1),
+            IngredientRecipe(name="orange", type="solide", quantity=1)
+        ],
+        duration=10,
+        steps=[
+            "Éplucher et couper les fruits.",
+            "Mélanger les fruits dans un saladier.",
+            "Servir frais."
+        ]
     )
+]
+
+ingredients_db = [
+    Ingredient(id=1, name="oeuf", expiration="2024-06-30", type="unite", quantity=12),
+    Ingredient(id=2, name="farine", expiration="2024-07-15", type="solide", quantity=1000),
+    Ingredient(id=3, name="pomme", expiration="2024-06-25", type="solide", quantity=5),
 ]
 
 # route test (home)
@@ -39,3 +60,7 @@ def test():
 @app.get("/api/recipes", response_model=List[Recipe])
 def get_recipes():
     return recipes_db
+
+@app.get("/api/ingredients", response_model=List[Ingredient])
+def get_ingredients():
+    return ingredients_db
