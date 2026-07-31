@@ -1,27 +1,25 @@
-class Ingredient:
+from pydantic import BaseModel
+from typing import List
+from datetime import date
 
-    def __init__(self,id,name,expiration,type,quantity):
-        self.id = id
-        self.name = name
-        self.expiration = expiration
-        self.type = type
-        self.quantity = quantity
+class Ingredient(BaseModel):
+    id: int
+    name: str
+    expiration: date
+    type: str
+    quantity: float
 
-class Recipe:
-    
-    def __init__(self,id,title,ingredients,duration,steps):
-        self.id = id
-        self.title = title
-        self.ingredients = ingredients
-        self.duration = duration
-        self.steps = steps
+class Recipe(BaseModel):
+    id: int
+    title: str
+    ingredients: List[IngredientRecipe]
+    duration: int
+    steps: List[str]
 
-class IngredientRecipe:
+class IngredientRecipe(BaseModel):
+    name: str
+    type: str
+    quantity: float
 
-    def __init__(self,name,type,quantity):
-        self.name = name
-        self.type =type
-        self.quantity = quantity
 
-        
 
