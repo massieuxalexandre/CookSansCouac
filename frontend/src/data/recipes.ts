@@ -26,5 +26,19 @@ export const recipes: Recipe[] = [
             "Faire fondre le chocolat et le beurre au bain-marie.",
             "Dans un bol, battre les oeufs et le sucre jusqu'à ce que le mélange blanchisse.",
         ]
+    },
+    {
+        id: 2,
+        title: "Pancakes",
+        ingredients: [
+            {name: "oeuf", type: "unite", quantity: 1},
+            {name: "lait", type: "liquide", quantity: 200},
+            {name: "farine", type: "solide", quantity: 150}
+        ],
+        duration: 20,
+        steps: [
+            "Dans un bol, mélanger la farine, le sucre et la levure.",
+            "Ajouter l'oeuf et le lait, puis mélanger jusqu'à obtenir une pâte lisse.",
+        ]
     }
 ];
