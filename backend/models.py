@@ -6,8 +6,9 @@ class Ingredient(BaseModel):
     id: int
     name: str
     expiration: date
-    type: str
+    unit: str
     quantity: float
+
 
 class Recipe(BaseModel):
     id: int
@@ -18,7 +19,7 @@ class Recipe(BaseModel):
 
 class IngredientRecipe(BaseModel):
     name: str
-    type: str
+    unit: str
     quantity: float
 
 

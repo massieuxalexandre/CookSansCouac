@@ -11,14 +11,14 @@ function App() {
         
         <header style={{ textAlign: 'center', marginBottom: '30px' }}>
             <h1>Cook sans Couac</h1>
-            <h2>L'art de cuisiner relax !</h2>
+            <h2>L'art de la cuisine relax !</h2>
             
             <nav style={{ display: 'flex', justifyContent: 'center', gap: '20px', marginTop: '20px' }}>
                 <Link to="/recipes" style={{ padding: '10px 20px', background: '#eee', textDecoration: 'none', borderRadius: '5px' }}>
-                    Mes recettes
+                    Recettes
                 </Link>
                 <Link to="/ingredients" style={{ padding: '10px 20px', background: '#eee', textDecoration: 'none', borderRadius: '5px' }}>
-                    Mon ingrédients
+                    Mes ingrédients
                 </Link>
             </nav>
         </header>
